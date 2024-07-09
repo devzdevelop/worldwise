@@ -8,10 +8,10 @@ export default function CityList({ cities, isLoading }) {
   if (!cities.length)
     return <Message message='Add your first city by clicking on the map' />;
   return (
-    <div className={styles.cityList}>
+    <div>
       <ul className={styles.cityList}>
         {cities.map((city) => (
-          <CityItem key={city.cityName} city={city} />
+          <CityItem key={city.id} city={city} />
         ))}
       </ul>
     </div>
