@@ -1,6 +1,13 @@
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import styles from './Map.module.css';
-import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet';
+import {
+  MapContainer,
+  Marker,
+  Popup,
+  TileLayer,
+  useMap,
+  useMapEvent,
+} from 'react-leaflet';
 import { useEffect, useState } from 'react';
 import { useCities } from '../context/CitiesContext';
 export default function Map() {
@@ -9,22 +16,20 @@ export default function Map() {
   const [mapPosition, setMapPosition] = useState([40, 0]);
 
   const [searchParams, setSearchParams] = useSearchParams();
-  let lat = searchParams.get('lat');
-  let lng = searchParams.get('lng');
 
-  console.log('searchParams: ', searchParams.get('lat'));
+  let mapLat = searchParams.get('lat');
+  let mapLng = searchParams.get('lng');
+
   useEffect(() => {
-    lat && lng && setMapPosition([Number(lat), Number(lng)]);
-  }, [lat, lng]);
-
-  console.log('mapPosition: ', mapPosition);
+    if (mapLat && mapLng) setMapPosition([mapLat, mapLng]);
+  }, [mapLat, mapLng]);
 
   return (
     <div
       className={styles.mapContainer}
-      onClick={() => {
-        navigate('form');
-      }}
+      // onClick={() => {
+      //   navigate('form');
+      // }}
     >
       <MapContainer
         center={mapPosition}
@@ -34,7 +39,7 @@ export default function Map() {
       >
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-          url='https://{s}.tile.openstreetmap.fr/hot//{z}/{x}/{y}.png'
+          url='https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png'
         />
         {cities.map((city) => (
           <div key={city.id}>
@@ -46,7 +51,22 @@ export default function Map() {
             </Marker>
           </div>
         ))}
+        <ChangeCenter position={mapPosition} />
+        <DetectClick />
       </MapContainer>
     </div>
   );
+}
+
+function ChangeCenter({ position }) {
+  const map = useMap();
+  map.setView(position, 8);
+  return null;
+}
+
+function DetectClick() {
+  const navigate = useNavigate();
+  useMapEvent({
+    click: (e) => navigate(`form?lat=${e.latlng.lat}&lng=${e.latlng.lng}`),
+  });
 }
