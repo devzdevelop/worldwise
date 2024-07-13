@@ -10,7 +10,7 @@
         "lat": 38.727881642324164,
         "lng": -9.140900099907554
       },
-      "id": 73930385
+      "id": "73930385"
     },
     {
       "cityName": "Madrid",
@@ -22,7 +22,7 @@
         "lat": 40.46635901755316,
         "lng": -3.7133789062500004
       },
-      "id": 17806751
+      "id": "17806751"
     },
     {
       "cityName": "Berlin",
@@ -34,7 +34,43 @@
         "lat": 52.53586782505711,
         "lng": 13.376933665713324
       },
-      "id": 98443197
+      "id": "98443197"
+    },
+    {
+      "id": "21e5",
+      "cityName": "Tuejar",
+      "country": "Spain",
+      "date": "2024-07-13T12:11:20.823Z",
+      "notes": "Love it!",
+      "emoji": "🇪🇸",
+      "position": {
+        "lat": "39.7789912112384",
+        "lng": "-1.1211664061061246"
+      }
+    },
+    {
+      "id": "41e0",
+      "cityName": "Saint Ann’s Bay",
+      "country": "Jamaica",
+      "date": "2024-07-13T12:16:29.030Z",
+      "notes": "Beautiful place! I enjoyed Dunns River Fall!",
+      "emoji": "🇯🇲",
+      "position": {
+        "lat": "18.415969108630637",
+        "lng": "-77.13896705504447"
+      }
+    },
+    {
+      "id": "c843",
+      "cityName": "Monaco",
+      "country": "Monaco",
+      "date": "2024-07-13T12:24:07.977Z",
+      "notes": "This place is insane! It's a very affluent city. When I was there, I saw supercars everywhere I went. This place will blow your mind. I'm definitely going to buy a mansion here for sure. 📌🏡👍🏽",
+      "emoji": "🇲🇨",
+      "position": {
+        "lat": "43.73054572402719",
+        "lng": "7.416983812642815"
+      }
     }
   ]
 }

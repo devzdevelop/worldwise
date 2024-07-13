@@ -1,4 +1,4 @@
-import { useNavigate, useSearchParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import styles from './Map.module.css';
 import {
   MapContainer,
@@ -14,7 +14,7 @@ import { useGeolocation } from '../hooks/useGeolocation';
 import Button from './Button';
 import { useUrlPosition } from '../hooks/useUrlPosition';
 export default function Map() {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const { cities } = useCities();
   const [mapPosition, setMapPosition] = useState([40, 0]);
   const {
@@ -60,7 +60,10 @@ export default function Map() {
         />
         {cities.map((city) => (
           <div key={city.id}>
-            <Marker position={[city.position.lat, city.position.lng]}>
+            <Marker
+              key={city.id}
+              position={[city.position.lat, city.position.lng]}
+            >
               <Popup>
                 <span>{city.emoji}</span>
                 <span>{city.cityName}</span>
