@@ -71,6 +71,18 @@
         "lat": "43.73054572402719",
         "lng": "7.416983812642815"
       }
+    },
+    {
+      "id": "c9de",
+      "cityName": "Gulf Shores",
+      "country": "United States of America (the)",
+      "date": "2021-05-23T20:08:45.000Z",
+      "notes": "This was a fantasic experience. This is the second place abroad I've traveled to. Looking forward to returning for vacation. The beach in gulf shores is insane and beautiful.",
+      "emoji": "🇺🇸",
+      "position": {
+        "lat": "30.25049653033088",
+        "lng": "-87.68974756109442"
+      }
     }
   ]
 }
