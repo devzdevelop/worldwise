@@ -19,7 +19,6 @@ function reducer(state, action) {
         isLoading: 'true',
       };
     case 'cities/loaded':
-      console.log(action.paylaod);
       return {
         ...state,
         isLoading: false,
