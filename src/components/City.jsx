@@ -2,7 +2,7 @@
 import { useParams } from 'react-router-dom';
 import styles from './City.module.css';
 import { useCities } from '../context/CitiesContext';
-import { useEffect } from 'react';
+import { useCallback, useEffect } from 'react';
 import Spinner from './Spinner';
 import BackButton from './BackButton';
 
@@ -21,9 +21,11 @@ function City() {
   // let lng = searchParams.get('lng');
   const { getCity, currentCity, isLoading } = useCities();
 
+  useCallback(getCity, [getCity]);
+
   useEffect(() => {
     getCity(id);
-  }, [id]);
+  }, [getCity, id]);
 
   const { cityName, emoji, date, notes } = currentCity;
 
