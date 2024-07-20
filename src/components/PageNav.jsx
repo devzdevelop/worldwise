@@ -2,7 +2,6 @@ import { NavLink } from 'react-router-dom';
 import styles from './PageNav.module.css';
 import Logo from './Logo';
 import { useAuthContext } from '../context/FakeAuthContext';
-import { useEffect } from 'react';
 
 export default function PageNav() {
   const { isAuthenticated, logout } = useAuthContext();
